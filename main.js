@@ -1,35 +1,47 @@
-var x = 0.6;
+//memulai perhitungan 
+function hitung(){
+    //deklarasi variabel
+    var x;
+    var iterasi;
+    var toleransi;
 
-var fungsi = 0;
-var turunan = 0;
+    //definisi fungsi f(x)
+    function f(x){
+        return Math.pow(x, 3) - 3*x + 1;
+    }
 
+    //definisi turunan fungsi f(x) atau f'(x)
+    function f_(x){
+        return 9 * Math.pow(x, 2) - 3;
+    }
+    
+    //Ini adalah kode untuk menampilkan header tabel dan mengambil nilai dari input.
+    x = Number(document.getElementById('x').value);
+    iterasi = Number(document.getElementById('iterasi').value);
+    toleransi = Number(document.getElementById('toleransi').value);
+    document.getElementById('tabel').innerHTML = `
+    <tr>
+        <td>Iterasi</td>
+        <td>Nilai x</td>
+        <td>f(x)</td>
+        <td>f'(x)</td>
+    </tr>
+    `;
 
-var x_1 = 0;
-
-
-
-for(var i = 0; i<100; i++){
-    fungsi = (x*x*x) - 3*x + 1;
-    turunan = 9*(x*x) - 3;
-    x_1 = x - (fungsi/turunan);
-    console.log(i+1);
-    console.log("------------");
-    console.log(x);
-    console.log(fungsi);
-    console.log(turunan);
-    console.log(x_1);
-    console.log("------------");
-    x = x_1;
+    //Memulai Iterasi
+    for(var i = 1; i<=iterasi; i++){
+        document.getElementById("tabel").innerHTML +=`
+            <tr>
+                <td>`+ Number(i+1) +`</td>
+                <td>`+ x +`</td>
+                <td>`+ f(x) +`</td>
+                <td>`+ f_(x) +`</td>
+            </tr>
+        `;
+        if (f(x) < toleransi){
+            break;
+        }
+        x = x - (f(x)/f_(x));
+    }
 }
 
-
-
-
-
-
-
-
-
-function foo(){
-
-}

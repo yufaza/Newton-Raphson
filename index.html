@@ -3,16 +3,25 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Menghitung akar Persamaan</title>
+    <title>Metode Newton-Raphson</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     
 </head>
 <body>
-    <h1>Menghitung Akar Persamaan garis menggunakan metode Newton-Raphson</h1>
-    <p>1. Menghitung akar dari fungsi f(x) = x<sup>3</sup> - 3x + 1</p>
-    <input type="text" id="x1">
-    <input type="text" id="">
+    <h1>Menghitung Akar Persamaan Menggunakan Metode Newton-Raphson</h1>
+    <h4>Fungsi yang dihitung adalah f(x) = x<sup>3</sup> - 3x + 1 dan turunannya f'(x) = 9x<sup>2</sup> - 3</h4>
+    <form action="">
+        <label for="x">Nilai X awal:</label>
+        <input type="number" name="x" id="x" required placeholder="contoh 3">
+        <label for="iterasi">Jumlah iterasi Maksimal:</label>
+        <input type="number" name="iterasi" id="iterasi" required placeholder="contoh 20">
+        <label for="toleransi">Toleransi: </label>
+        <input type="number" name="toleransi" id="toleransi" required placeholder="contoh 0.0000001">
+        <button type="submit" onclick="hitung()">Hitung</button>
+    </form>
+    
+    <table id="tabel">
+    </table>
     <script src="main.js"></script>
 </body>
 </html>
