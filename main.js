@@ -12,7 +12,7 @@ function hitung(){
 
     //definisi turunan fungsi f(x) atau f'(x)
     function f_(x){
-        return 9 * Math.pow(x, 2) - 3;
+        return 3 * Math.pow(x, 2) - 3;
     }
     
     //Ini adalah kode untuk menampilkan header tabel dan mengambil nilai dari input.
